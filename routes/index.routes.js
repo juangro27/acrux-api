@@ -9,7 +9,7 @@ router.use("/users", usersRoutes);
 const uploadRoutes = require("./upload.routes");
 router.use("/upload", uploadRoutes);
 
-const concertsRoutes = require("./concerts.routes");
-router.use("/concerts", concertsRoutes);
+const eventsRoutes = require("./events.routes");
+router.use("/events", eventsRoutes);
 
 module.exports = router;
