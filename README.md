@@ -18,31 +18,31 @@ This API provides endpoints for managing user accounts and events. The API has t
 
 Authentication Endpoints /auth
 
-| METHOD | URI Path | Description                                                                              | Protected |     |
-| ------ | :------: | ---------------------------------------------------------------------------------------- | --------- | --- |
-| POST   | /signup  | Creates a new user account with the provided name, last name, email, and password.       |           |     |
-| POST   |  /login  | Logs a user in with the provided email and password and returns an authentication token. |           |     |
-| GET    | /verify  | Verifies the authentication token of a user.                                             | ✔️        |     |
+| METHOD | URI Path | Description                                                                              | Protected |
+| ------ | :------: | ---------------------------------------------------------------------------------------- | --------- |
+| POST   | /signup  | Creates a new user account with the provided name, last name, email, and password.       |           |
+| POST   |  /login  | Logs a user in with the provided email and password and returns an authentication token. |           |
+| GET    | /verify  | Verifies the authentication token of a user.                                             | ✔️        |
 
 Users Endpoints /users
 
-| METHOD |   URI Path    | Description                                                                                 | Protected |     |
-| ------ | :-----------: | ------------------------------------------------------------------------------------------- | --------- | --- |
-| GET    |       /       | Retrieves a lis of users                                                                    | ✔️        |     |
-| PUT    | /addEvent/:id | Add or remove an event with the provided eventId to a user's favorite events list.          | ✔️        |     |
-| GET    |     /:id      | Retrieves a user with the provided ID.                                                      |           |     |
-| PUT    |   /:id/edit   | Updates a user with the provided ID with the provided name, last name, email, and password. | ✔️        |     |
-| DELETE |  /:id/delete  | Deletes an user with the provided ID.                                                       | ✔️        |     |
+| METHOD |   URI Path    | Description                                                                                 | Protected |
+| ------ | :-----------: | ------------------------------------------------------------------------------------------- | --------- |
+| GET    |       /       | Retrieves a lis of users                                                                    | ✔️        |
+| PUT    | /addEvent/:id | Add or remove an event with the provided eventId to a user's favorite events list.          | ✔️        |
+| GET    |     /:id      | Retrieves a user with the provided ID.                                                      |           |
+| PUT    |   /:id/edit   | Updates a user with the provided ID with the provided name, last name, email, and password. | ✔️        |
+| DELETE |  /:id/delete  | Deletes an user with the provided ID.                                                       | ✔️        |
 
 Events Endpoints /events
 
-| METHOD |  URI Path   | Description                                                                                                          | Protected |     |
-| ------ | :---------: | -------------------------------------------------------------------------------------------------------------------- | --------- | --- |
-| GET    |      /      | Retrieves a list of events that match the given query parameters (country, city, address, and date).                 |           |     |
-| POST   |   /create   | Creates a new event with the provided name, address, city, country, images, price, date, and host.                   | ✔️        |     |
-| GET    |    /:id     | Retrieves an event with the provided ID.                                                                             |           |     |
-| PUT    |  /:id/edit  | Updates an event with the provided ID with the provided name, address, city, country, images, price, date, and host. | ✔️        |     |
-| DELETE | /:id/delete | Deletes an event with the provided ID.                                                                               | ✔️        |     |
+| METHOD |  URI Path   | Description                                                                                                          | Protected |
+| ------ | :---------: | -------------------------------------------------------------------------------------------------------------------- | --------- |
+| GET    |      /      | Retrieves a list of events that match the given query parameters (country, city, address, and date).                 |           |
+| POST   |   /create   | Creates a new event with the provided name, address, city, country, images, price, date, and host.                   | ✔️        |
+| GET    |    /:id     | Retrieves an event with the provided ID.                                                                             |           |
+| PUT    |  /:id/edit  | Updates an event with the provided ID with the provided name, address, city, country, images, price, date, and host. | ✔️        |
+| DELETE | /:id/delete | Deletes an event with the provided ID.                                                                               | ✔️        |
 
 User and Event Schemas
 The API uses the following user and event schemas:
