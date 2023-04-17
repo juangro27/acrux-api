@@ -53,8 +53,8 @@ The API uses the following user and event schemas:
 
 **User Schema**
 
-````javascript
-{
+`````javascript
+    {
         name: {
             type: String,
             required: [true, "Name is required."],
@@ -89,12 +89,13 @@ The API uses the following user and event schemas:
                 type: Schema.Types.ObjectId,
             },
         ],
+
     },
-    ```
+    ````
 
 **Event Schema**
 
-```javascript
+````javascript
     {
         name: {
             type: String,
@@ -145,4 +146,4 @@ The API uses the following user and event schemas:
             },
         ],
     },
-````
+`````
