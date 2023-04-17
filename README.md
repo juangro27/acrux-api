@@ -1,7 +1,7 @@
 <div align="center">
   <h1>Acrux API Technical Test</h1>
   <p>This repository contains the backend for the Acrux technical test. It is built using Node.js and Express.js, and it provides a RESTful API for managing events and users.</p>
-  <p> <str>BASE URL:</str> http://localhost:5005/api</p>
+  <p> BASE URL: <str>http://localhost:5005/api</str> or <str>https://acrux-api.fly.dev/api/</str></p>
 </div>
 
 ## Getting Started
@@ -18,13 +18,20 @@ JWT_SECRET=<your JWT secret>
 
 You can then start the server by running `npm start`. By default, the server will listen on port 5005.
 
+Alternatively, you can access a deployed version of the API at the following URL:
+
+https://acrux-api.fly.dev/api/
+
 ## API Usage Examples
 
 In the `docs` folder of this project, you can find a Postman collection with example requests to all of the API endpoints. To use it, follow these steps:
 
 Install Postman on your computer if you haven't already done so.
+
 Import the API_Usage_Examples.json file into Postman.
+
 You should now see a collection of API requests in the left sidebar of Postman. Click on any request to view its details and send the request to the API.
+
 These examples will help you understand how to use the API and the expected responses. Please note that you'll need to start the server by running npm start before you can use the API.
 
 This API provides endpoints for managing user accounts and events. The API has the following endpoints:
