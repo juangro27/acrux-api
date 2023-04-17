@@ -53,7 +53,7 @@ The API uses the following user and event schemas:
 
 **User Schema**
 
-`````javascript
+```javascript
     {
         name: {
             type: String,
@@ -91,11 +91,11 @@ The API uses the following user and event schemas:
         ],
 
     },
-    ````
+```
 
 **Event Schema**
 
-````javascript
+```javascript
     {
         name: {
             type: String,
@@ -146,4 +146,4 @@ The API uses the following user and event schemas:
             },
         ],
     },
-`````
+```
