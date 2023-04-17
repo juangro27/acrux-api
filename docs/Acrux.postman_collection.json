@@ -1,0 +1,489 @@
+{
+	"info": {
+		"_postman_id": "55025d28-8d20-4a13-9792-1d7618afa69e",
+		"name": "Acrux",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26229401"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Juan",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Rodriguez",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "juan@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5005/api/auth/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "5005",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "juan@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5005/api/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "5005",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNkNGZhMTZjZmE1NjYxMzNkOGJiYzIiLCJuYW1lIjoianVhbiIsImxhc3ROYW1lIjoicm9kcmlndWV6Iiwicm9sZSI6IlVTRVIiLCJlbWFpbCI6Imp1YW5AZ21haWwuY29tIiwiZmF2b3JpdGVFdmVudHMiOltdLCJpYXQiOjE2ODE3Mzk2OTEsImV4cCI6MTY4MTc2MTI5MX0.aA11meDFceU6oqxvzU7A2xBVvoNNULYD-RDM2rjXvfU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5005/api/auth/verify",
+							"host": [
+								"localhost"
+							],
+							"port": "5005",
+							"path": [
+								"api",
+								"auth",
+								"verify"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Users list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNkMWQzYzE3NDFhYzJkOWI0MDA5YWIiLCJuYW1lIjoianVhbiIsImxhc3ROYW1lIjoicm9kcmlndWV6IiwiYXZhdGFyIjoiIiwicm9sZSI6IlVTRVIiLCJlbWFpbCI6Imp1YW5AZ21haWwuY29tIiwiZXZlbnRzIjpbXSwiaWF0IjoxNjgxNzI2NzgyLCJleHAiOjE2ODE3NDgzODJ9.Ms6MEECQmGTdK7y6OoTnk9eIvjqkZPyiL3FEuxg8vxE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5005/api/users/",
+							"host": [
+								"localhost"
+							],
+							"port": "5005",
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNkMWQzYzE3NDFhYzJkOWI0MDA5YWIiLCJuYW1lIjoianVhbiIsImxhc3ROYW1lIjoicm9kcmlndWV6IiwiYXZhdGFyIjoiIiwicm9sZSI6IlVTRVIiLCJlbWFpbCI6Imp1YW5AZ21haWwuY29tIiwiZXZlbnRzIjpbXSwiaWF0IjoxNjgxNzI2NzgyLCJleHAiOjE2ODE3NDgzODJ9.Ms6MEECQmGTdK7y6OoTnk9eIvjqkZPyiL3FEuxg8vxE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5005/api/users/643d4fa16cfa566133d8bbc2",
+							"host": [
+								"localhost"
+							],
+							"port": "5005",
+							"path": [
+								"api",
+								"users",
+								"643d4fa16cfa566133d8bbc2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNkMTM3YjNjYmYwMjA2Y2RjMzdmMmQiLCJuYW1lIjoianVhbiIsImxhc3ROYW1lIjoicm9kcmlndWV6IiwiYXZhdGFyIjoiIiwicm9sZSI6IlVTRVIiLCJlbWFpbCI6Imp1YW5AZ21haWwuY29tIiwiY29uY2VydHMiOltdLCJpYXQiOjE2ODE3MjQ0NjEsImV4cCI6MTY4MTc0NjA2MX0.6NkqE_LGphR_e8NPPLaQoLlo9datT47OXSmocg73hn0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "victor",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5005/api/users/643d1d3c1741ac2d9b4009ab/edit",
+							"host": [
+								"localhost"
+							],
+							"port": "5005",
+							"path": [
+								"api",
+								"users",
+								"643d1d3c1741ac2d9b4009ab",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add/delete event from favorite",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNkNGZhMTZjZmE1NjYxMzNkOGJiYzIiLCJuYW1lIjoianVhbiIsImxhc3ROYW1lIjoicm9kcmlndWV6Iiwicm9sZSI6IlVTRVIiLCJlbWFpbCI6Imp1YW5AZ21haWwuY29tIiwiZmF2b3JpdGVFdmVudHMiOltdLCJpYXQiOjE2ODE3Mzk2OTEsImV4cCI6MTY4MTc2MTI5MX0.aA11meDFceU6oqxvzU7A2xBVvoNNULYD-RDM2rjXvfU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:5005/api/users/addEvent/643d51018afdaaa3d185dfb0",
+							"host": [
+								"localhost"
+							],
+							"port": "5005",
+							"path": [
+								"api",
+								"users",
+								"addEvent",
+								"643d51018afdaaa3d185dfb0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNkMTM3YjNjYmYwMjA2Y2RjMzdmMmQiLCJuYW1lIjoianVhbiIsImxhc3ROYW1lIjoicm9kcmlndWV6IiwiYXZhdGFyIjoiIiwicm9sZSI6IlVTRVIiLCJlbWFpbCI6Imp1YW5AZ21haWwuY29tIiwiY29uY2VydHMiOltdLCJpYXQiOjE2ODE3MjQ0NjEsImV4cCI6MTY4MTc0NjA2MX0.6NkqE_LGphR_e8NPPLaQoLlo9datT47OXSmocg73hn0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "victor",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5005/api/users/643d1d3c1741ac2d9b4009ab/delete",
+							"host": [
+								"localhost"
+							],
+							"port": "5005",
+							"path": [
+								"api",
+								"users",
+								"643d1d3c1741ac2d9b4009ab",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Events",
+			"item": [
+				{
+					"name": "Create Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNkMWQzYzE3NDFhYzJkOWI0MDA5YWIiLCJuYW1lIjoianVhbiIsImxhc3ROYW1lIjoicm9kcmlndWV6IiwiYXZhdGFyIjoiIiwicm9sZSI6IlVTRVIiLCJlbWFpbCI6Imp1YW5AZ21haWwuY29tIiwiZXZlbnRzIjpbXSwiaWF0IjoxNjgxNzI2NzgyLCJleHAiOjE2ODE3NDgzODJ9.Ms6MEECQmGTdK7y6OoTnk9eIvjqkZPyiL3FEuxg8vxE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Welcome to Acrux\",\n    \"owner\": \"643d1d3c1741ac2d9b4009ab\",\n    \"address\": \"Alcala 123\",\n    \"country\": \"France\",\n    \"city\": \"Paris\",\n    \"images\": [\n        \"https://www.acruxmartech.com/assets/img/mejora-ventas-evento-colas.jpg\",\n        \"https://www.acruxmartech.com/assets/img/mejora-ventas-evento-colas.jpg\"\n    ],\n    \"price\": 100,\n    \"date\": \"2023-01-09T23:00:00.000Z\",\n    \"host\": [\n        \"Jose\",\n        \"Alberto\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5005/api/events/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5005",
+							"path": [
+								"api",
+								"events",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Events List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5005/api/events/?country=France",
+							"host": [
+								"localhost"
+							],
+							"port": "5005",
+							"path": [
+								"api",
+								"events",
+								""
+							],
+							"query": [
+								{
+									"key": "country",
+									"value": "France"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Events Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5005/api/events/643d51018afdaaa3d185dfb0",
+							"host": [
+								"localhost"
+							],
+							"port": "5005",
+							"path": [
+								"api",
+								"events",
+								"643d51018afdaaa3d185dfb0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNkNGZhMTZjZmE1NjYxMzNkOGJiYzIiLCJuYW1lIjoianVhbiIsImxhc3ROYW1lIjoicm9kcmlndWV6Iiwicm9sZSI6IlVTRVIiLCJlbWFpbCI6Imp1YW5AZ21haWwuY29tIiwiZmF2b3JpdGVFdmVudHMiOltdLCJpYXQiOjE2ODE3Mzk2OTEsImV4cCI6MTY4MTc2MTI5MX0.aA11meDFceU6oqxvzU7A2xBVvoNNULYD-RDM2rjXvfU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Welcome to Acrux\",\n    \"owner\": \"643d1d3c1741ac2d9b4009ab\",\n    \"address\": \"Alcala 123\",\n    \"country\": \"Madrid\",\n    \"city\": \"Spain\",\n    \"images\": [\n        \"https://www.acruxmartech.com/assets/img/mejora-ventas-evento-colas.jpg\",\n        \"https://www.acruxmartech.com/assets/img/mejora-ventas-evento-colas.jpg\"\n    ],\n    \"price\": 0,\n    \"date\": \"2023-01-09T23:00:00.000Z\",\n    \"host\": [\n        \"Jose\",\n        \"Alberto\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5005/api/events/643d51018afdaaa3d185dfb0/edit",
+							"host": [
+								"localhost"
+							],
+							"port": "5005",
+							"path": [
+								"api",
+								"events",
+								"643d51018afdaaa3d185dfb0",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNkMWQzYzE3NDFhYzJkOWI0MDA5YWIiLCJuYW1lIjoianVhbiIsImxhc3ROYW1lIjoicm9kcmlndWV6IiwiYXZhdGFyIjoiIiwicm9sZSI6IlVTRVIiLCJlbWFpbCI6Imp1YW5AZ21haWwuY29tIiwiZXZlbnRzIjpbXSwiaWF0IjoxNjgxNzM0MzExLCJleHAiOjE2ODE3NTU5MTF9._Dazc6i5B8tF3qobZ-oIiL1BPRNOn_8NeXGaD4QXKok",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "address",
+									"value": "Alcala 125",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5005/api/events/643d36dbb353643baf47ac60/edit",
+							"host": [
+								"localhost"
+							],
+							"port": "5005",
+							"path": [
+								"api",
+								"events",
+								"643d36dbb353643baf47ac60",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
