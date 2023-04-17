@@ -40,13 +40,11 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:5005/api/auth/signup",
+							"raw": "{{API_URL}}/auth/signup",
 							"host": [
-								"localhost"
+								"{{API_URL}}"
 							],
-							"port": "5005",
 							"path": [
-								"api",
 								"auth",
 								"signup"
 							]
@@ -75,13 +73,11 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:5005/api/auth/login",
+							"raw": "{{API_URL}}/auth/login",
 							"host": [
-								"localhost"
+								"{{API_URL}}"
 							],
-							"port": "5005",
 							"path": [
-								"api",
 								"auth",
 								"login"
 							]
@@ -97,7 +93,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNkNGZhMTZjZmE1NjYxMzNkOGJiYzIiLCJuYW1lIjoianVhbiIsImxhc3ROYW1lIjoicm9kcmlndWV6Iiwicm9sZSI6IlVTRVIiLCJlbWFpbCI6Imp1YW5AZ21haWwuY29tIiwiZmF2b3JpdGVFdmVudHMiOltdLCJpYXQiOjE2ODE3Mzk2OTEsImV4cCI6MTY4MTc2MTI5MX0.aA11meDFceU6oqxvzU7A2xBVvoNNULYD-RDM2rjXvfU",
+									"value": "{{Token}}",
 									"type": "string"
 								}
 							]
@@ -105,13 +101,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:5005/api/auth/verify",
+							"raw": "{{API_URL}}/auth/verify",
 							"host": [
-								"localhost"
+								"{{API_URL}}"
 							],
-							"port": "5005",
 							"path": [
-								"api",
 								"auth",
 								"verify"
 							]
@@ -132,7 +126,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNkMWQzYzE3NDFhYzJkOWI0MDA5YWIiLCJuYW1lIjoianVhbiIsImxhc3ROYW1lIjoicm9kcmlndWV6IiwiYXZhdGFyIjoiIiwicm9sZSI6IlVTRVIiLCJlbWFpbCI6Imp1YW5AZ21haWwuY29tIiwiZXZlbnRzIjpbXSwiaWF0IjoxNjgxNzI2NzgyLCJleHAiOjE2ODE3NDgzODJ9.Ms6MEECQmGTdK7y6OoTnk9eIvjqkZPyiL3FEuxg8vxE",
+									"value": "{{Token}}",
 									"type": "string"
 								}
 							]
@@ -140,13 +134,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:5005/api/users/",
+							"raw": "{{API_URL}}/users/",
 							"host": [
-								"localhost"
+								"{{API_URL}}"
 							],
-							"port": "5005",
 							"path": [
-								"api",
 								"users",
 								""
 							]
@@ -162,7 +154,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNkMWQzYzE3NDFhYzJkOWI0MDA5YWIiLCJuYW1lIjoianVhbiIsImxhc3ROYW1lIjoicm9kcmlndWV6IiwiYXZhdGFyIjoiIiwicm9sZSI6IlVTRVIiLCJlbWFpbCI6Imp1YW5AZ21haWwuY29tIiwiZXZlbnRzIjpbXSwiaWF0IjoxNjgxNzI2NzgyLCJleHAiOjE2ODE3NDgzODJ9.Ms6MEECQmGTdK7y6OoTnk9eIvjqkZPyiL3FEuxg8vxE",
+									"value": "{{Token}}",
 									"type": "string"
 								}
 							]
@@ -170,13 +162,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:5005/api/users/643d4fa16cfa566133d8bbc2",
+							"raw": "{{API_URL}}/users/643d4fa16cfa566133d8bbc2",
 							"host": [
-								"localhost"
+								"{{API_URL}}"
 							],
-							"port": "5005",
 							"path": [
-								"api",
 								"users",
 								"643d4fa16cfa566133d8bbc2"
 							]
@@ -192,7 +182,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNkMTM3YjNjYmYwMjA2Y2RjMzdmMmQiLCJuYW1lIjoianVhbiIsImxhc3ROYW1lIjoicm9kcmlndWV6IiwiYXZhdGFyIjoiIiwicm9sZSI6IlVTRVIiLCJlbWFpbCI6Imp1YW5AZ21haWwuY29tIiwiY29uY2VydHMiOltdLCJpYXQiOjE2ODE3MjQ0NjEsImV4cCI6MTY4MTc0NjA2MX0.6NkqE_LGphR_e8NPPLaQoLlo9datT47OXSmocg73hn0",
+									"value": "{{Token}}",
 									"type": "string"
 								}
 							]
@@ -217,13 +207,11 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:5005/api/users/643d1d3c1741ac2d9b4009ab/edit",
+							"raw": "{{API_URL}}/users/643d1d3c1741ac2d9b4009ab/edit",
 							"host": [
-								"localhost"
+								"{{API_URL}}"
 							],
-							"port": "5005",
 							"path": [
-								"api",
 								"users",
 								"643d1d3c1741ac2d9b4009ab",
 								"edit"
@@ -240,7 +228,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNkNGZhMTZjZmE1NjYxMzNkOGJiYzIiLCJuYW1lIjoianVhbiIsImxhc3ROYW1lIjoicm9kcmlndWV6Iiwicm9sZSI6IlVTRVIiLCJlbWFpbCI6Imp1YW5AZ21haWwuY29tIiwiZmF2b3JpdGVFdmVudHMiOltdLCJpYXQiOjE2ODE3Mzk2OTEsImV4cCI6MTY4MTc2MTI5MX0.aA11meDFceU6oqxvzU7A2xBVvoNNULYD-RDM2rjXvfU",
+									"value": "{{Token}}",
 									"type": "string"
 								}
 							]
@@ -248,13 +236,11 @@
 						"method": "PUT",
 						"header": [],
 						"url": {
-							"raw": "localhost:5005/api/users/addEvent/643d51018afdaaa3d185dfb0",
+							"raw": "{{API_URL}}/users/addEvent/643d51018afdaaa3d185dfb0",
 							"host": [
-								"localhost"
+								"{{API_URL}}"
 							],
-							"port": "5005",
 							"path": [
-								"api",
 								"users",
 								"addEvent",
 								"643d51018afdaaa3d185dfb0"
@@ -271,7 +257,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNkMTM3YjNjYmYwMjA2Y2RjMzdmMmQiLCJuYW1lIjoianVhbiIsImxhc3ROYW1lIjoicm9kcmlndWV6IiwiYXZhdGFyIjoiIiwicm9sZSI6IlVTRVIiLCJlbWFpbCI6Imp1YW5AZ21haWwuY29tIiwiY29uY2VydHMiOltdLCJpYXQiOjE2ODE3MjQ0NjEsImV4cCI6MTY4MTc0NjA2MX0.6NkqE_LGphR_e8NPPLaQoLlo9datT47OXSmocg73hn0",
+									"value": "{{Token}}",
 									"type": "string"
 								}
 							]
@@ -297,13 +283,11 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:5005/api/users/643d1d3c1741ac2d9b4009ab/delete",
+							"raw": "{{API_URL}}/users/643d1d3c1741ac2d9b4009ab/delete",
 							"host": [
-								"localhost"
+								"{{API_URL}}"
 							],
-							"port": "5005",
 							"path": [
-								"api",
 								"users",
 								"643d1d3c1741ac2d9b4009ab",
 								"delete"
@@ -325,7 +309,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNkMWQzYzE3NDFhYzJkOWI0MDA5YWIiLCJuYW1lIjoianVhbiIsImxhc3ROYW1lIjoicm9kcmlndWV6IiwiYXZhdGFyIjoiIiwicm9sZSI6IlVTRVIiLCJlbWFpbCI6Imp1YW5AZ21haWwuY29tIiwiZXZlbnRzIjpbXSwiaWF0IjoxNjgxNzI2NzgyLCJleHAiOjE2ODE3NDgzODJ9.Ms6MEECQmGTdK7y6OoTnk9eIvjqkZPyiL3FEuxg8vxE",
+									"value": "{{Token}}",
 									"type": "string"
 								}
 							]
@@ -342,13 +326,11 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5005/api/events/create",
+							"raw": "{{API_URL}}/events/create",
 							"host": [
-								"localhost"
+								"{{API_URL}}"
 							],
-							"port": "5005",
 							"path": [
-								"api",
 								"events",
 								"create"
 							]
@@ -362,13 +344,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:5005/api/events/?country=France",
+							"raw": "{{API_URL}}/events/?country=France",
 							"host": [
-								"localhost"
+								"{{API_URL}}"
 							],
-							"port": "5005",
 							"path": [
-								"api",
 								"events",
 								""
 							],
@@ -388,13 +368,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:5005/api/events/643d51018afdaaa3d185dfb0",
+							"raw": "{{API_URL}}/events/643d51018afdaaa3d185dfb0",
 							"host": [
-								"localhost"
+								"{{API_URL}}"
 							],
-							"port": "5005",
 							"path": [
-								"api",
 								"events",
 								"643d51018afdaaa3d185dfb0"
 							]
@@ -410,7 +388,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNkNGZhMTZjZmE1NjYxMzNkOGJiYzIiLCJuYW1lIjoianVhbiIsImxhc3ROYW1lIjoicm9kcmlndWV6Iiwicm9sZSI6IlVTRVIiLCJlbWFpbCI6Imp1YW5AZ21haWwuY29tIiwiZmF2b3JpdGVFdmVudHMiOltdLCJpYXQiOjE2ODE3Mzk2OTEsImV4cCI6MTY4MTc2MTI5MX0.aA11meDFceU6oqxvzU7A2xBVvoNNULYD-RDM2rjXvfU",
+									"value": "{{Token}}",
 									"type": "string"
 								}
 							]
@@ -427,13 +405,11 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:5005/api/events/643d51018afdaaa3d185dfb0/edit",
+							"raw": "{{API_URL}}/events/643d51018afdaaa3d185dfb0/edit",
 							"host": [
-								"localhost"
+								"{{API_URL}}"
 							],
-							"port": "5005",
 							"path": [
-								"api",
 								"events",
 								"643d51018afdaaa3d185dfb0",
 								"edit"
@@ -450,7 +426,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNkMWQzYzE3NDFhYzJkOWI0MDA5YWIiLCJuYW1lIjoianVhbiIsImxhc3ROYW1lIjoicm9kcmlndWV6IiwiYXZhdGFyIjoiIiwicm9sZSI6IlVTRVIiLCJlbWFpbCI6Imp1YW5AZ21haWwuY29tIiwiZXZlbnRzIjpbXSwiaWF0IjoxNjgxNzM0MzExLCJleHAiOjE2ODE3NTU5MTF9._Dazc6i5B8tF3qobZ-oIiL1BPRNOn_8NeXGaD4QXKok",
+									"value": "{{Token}}",
 									"type": "string"
 								}
 							]
@@ -468,13 +444,11 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:5005/api/events/643d36dbb353643baf47ac60/edit",
+							"raw": "{{API_URL}}/events/643d36dbb353643baf47ac60/edit",
 							"host": [
-								"localhost"
+								"{{API_URL}}"
 							],
-							"port": "5005",
 							"path": [
-								"api",
 								"events",
 								"643d36dbb353643baf47ac60",
 								"edit"
@@ -484,6 +458,36 @@
 					"response": []
 				}
 			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNkNGZhMTZjZmE1NjYxMzNkOGJiYzIiLCJuYW1lIjoianVhbiIsImxhc3ROYW1lIjoicm9kcmlndWV6Iiwicm9sZSI6IlVTRVIiLCJlbWFpbCI6Imp1YW5AZ21haWwuY29tIiwiZmF2b3JpdGVFdmVudHMiOlsiNjQzZDUxMDE4YWZkYWFhM2QxODVkZmIwIl0sImlhdCI6MTY4MTc1MjMwNSwiZXhwIjoxNjgxNzczOTA1fQ.B5n-K447vMHxT8d3ASUUeMswCqX3N-nOaCcKQcB8sh8"
+		},
+		{
+			"key": "API_URL",
+			"value": "https://acrux-api.fly.dev/api"
 		}
 	]
 }
