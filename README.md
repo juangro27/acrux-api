@@ -1,6 +1,7 @@
 <div align="center">
   <h1>Acrux API Technical Test</h1>
   <p>This repository contains the backend for the Acrux technical test. It is built using Node.js and Express.js, and it provides a RESTful API for managing events and users.</p>
+  <p> **BASE URL:** localhost:5005/api</p>
 </div>
 
 ## Getting Started
