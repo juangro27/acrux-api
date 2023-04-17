@@ -6,9 +6,6 @@ router.use("/auth", authRoutes);
 const usersRoutes = require("./users.routes");
 router.use("/users", usersRoutes);
 
-const uploadRoutes = require("./upload.routes");
-router.use("/upload", uploadRoutes);
-
 const eventsRoutes = require("./events.routes");
 router.use("/events", eventsRoutes);
 

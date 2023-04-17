@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 
-const userSchema = new Schema(
+const eventSchema = new Schema(
     {
         name: {
             type: String,
@@ -30,7 +30,7 @@ const userSchema = new Schema(
             {
                 type: String,
                 trim: true,
-                required: [true, "At least one image is required."],
+                required: [true, "Image is required."],
             },
         ],
         price: {
@@ -56,6 +56,6 @@ const userSchema = new Schema(
     }
 );
 
-const User = model("User", userSchema);
+const Event = model("event", eventSchema);
 
-module.exports = User;
+module.exports = Event;

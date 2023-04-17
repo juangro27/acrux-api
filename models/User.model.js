@@ -16,11 +16,6 @@ const userSchema = new Schema(
             lowercase: true,
             trim: true,
         },
-        avatar: {
-            type: String,
-            trim: true,
-            default: "",
-        },
         role: {
             type: String,
             enum: ["USER", "PLANNER", "ADMIN"],
@@ -37,9 +32,9 @@ const userSchema = new Schema(
             type: String,
             required: [true, "Password is required."],
         },
-        concerts: [
+        favoriteEvents: [
             {
-                ref: "concert",
+                ref: "events",
                 type: Schema.Types.ObjectId,
             },
         ],
@@ -59,16 +54,15 @@ userSchema.pre("save", function (next) {
 });
 
 userSchema.methods.signToken = function () {
-    const { _id, name, lastName, avatar, role, email, concerts } = this;
+    const { _id, name, lastName, role, email, favoriteEvents } = this;
 
     const payload = {
         _id,
         name,
         lastName,
-        avatar,
         role,
         email,
-        concerts,
+        favoriteEvents,
     };
 
     const authToken = jwt.sign(payload, process.env.TOKEN_SECRET, {
@@ -83,6 +77,6 @@ userSchema.methods.validatePassword = function (candidatePassword) {
     return bcrypt.compareSync(candidatePassword, this.password);
 };
 
-const User = model("User", userSchema);
+const User = model("user", userSchema);
 
 module.exports = User;

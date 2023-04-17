@@ -3,23 +3,25 @@ const User = require("../models/User.model.js");
 
 const { verifyToken } = require("../middlewares/verifyToken");
 
-router.post("/signup", (req, res, next) => {
+router.post("/signup", async (req, res, next) => {
     const { name, lastName, email, password } = req.body;
+    try {
+        const emailUsed = await User.findOne({ email });
 
-    User.findOne({ email })
-        .then((foundUser) => {
-            if (foundUser) {
-                res.status(401).json({ errorMessages: ["Email in use."] });
-                return;
-            } else {
-                return User.create({ email, password, name, lastName });
-            }
-        })
-        .then(() => res.sendStatus(201))
-        .catch((err) => next(err));
+        if (emailUsed) {
+            res.status(401).json({ errorMessages: ["Email in use."] });
+            return;
+        } else {
+            await User.create({ email, password, name, lastName });
+            res.sendStatus(201);
+            return;
+        }
+    } catch (err) {
+        next(err);
+    }
 });
 
-router.post("/login", (req, res, next) => {
+router.post("/login", async (req, res, next) => {
     const { email, password } = req.body;
 
     if (email === "" || password === "") {
@@ -29,29 +31,33 @@ router.post("/login", (req, res, next) => {
         return;
     }
 
-    User.findOne({ email })
-        .then((foundUser) => {
-            if (!foundUser) {
-                res.status(401).json({
-                    errorMessages: ["Invalid email or password"],
-                });
-                return;
-            }
+    try {
+        const user = await User.findOne({ email });
+        if (!user) {
+            res.status(401).json({
+                errorMessages: ["Invalid email or password"],
+            });
+            return;
+        }
 
-            if (foundUser.validatePassword(password)) {
-                const authToken = foundUser.signToken();
-                res.status(200).json({ authToken });
-            } else {
-                res.status(401).json({
-                    errorMessages: ["Invalid email or password"],
-                });
-            }
-        })
-        .catch((err) => next(err));
+        if (user.validatePassword(password)) {
+            const authToken = user.signToken();
+            res.status(200).json({ authToken });
+            return;
+        } else {
+            res.status(401).json({
+                errorMessages: ["Invalid email or password"],
+            });
+            return;
+        }
+    } catch (err) {
+        next(err);
+    }
 });
 
 router.get("/verify", verifyToken, (req, res, next) => {
     res.json(req.payload);
+    return;
 });
 
 module.exports = router;
