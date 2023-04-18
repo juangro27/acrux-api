@@ -4,19 +4,22 @@ const User = require("../models/User.model");
 const router = require("express").Router();
 
 router.get("/", async (req, res, next) => {
-    const { country, city, date, address } = req.query;
+    const { country, city, date, address, hosts } = req.query;
     let { limit: pageSize, skip } = req.query;
-    pageSize = pageSize ? parseInt(pageSize) : 10;
-    skip = skip ? parseInt(skip) : 0;
+    pageSize = pageSize && skip !== "undefined" ? parseInt(pageSize) : 10;
+    skip = skip && skip !== "undefined" ? parseInt(skip) : 0;
 
     const dateRegex = /^\d{2}\/\d{2}\/\d{4}$/;
 
     let queries = {};
 
-    if (country) queries.country = new RegExp(country, "i");
-    if (city) queries.city = new RegExp(city, "i");
-    if (address) queries.address = new RegExp(address, "i");
-    if (date && date.match(dateRegex)) {
+    if (country && country !== "undefined")
+        queries.country = new RegExp(country, "i");
+    if (city && city !== "undefined") queries.city = new RegExp(city, "i");
+    if (hosts && hosts !== "undefined") queries.hosts = new RegExp(hosts, "i");
+    if (address && address !== "undefined")
+        queries.address = new RegExp(address, "i");
+    if (date && date.match(dateRegex) && date !== "undefined") {
         const parsedDate = new Date(Date.parse(date));
         if (isNaN(parsedDate.getTime())) {
             res.status(400).json({
@@ -31,8 +34,10 @@ router.get("/", async (req, res, next) => {
     }
 
     try {
+        console.log("queries", queries);
+        console.log("req.queries", req.query);
         const promises = [
-            Event.count(),
+            Event.find(queries).count(),
             Event.find(queries).limit(pageSize).skip(skip),
         ];
         const [count, events] = await Promise.all(promises);
