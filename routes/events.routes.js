@@ -46,7 +46,7 @@ router.post("/create", verifyToken, async (req, res, next) => {
         images,
         price,
         date,
-        host,
+        hosts,
     } = req.body;
     const { _id: owner } = req.payload;
 
@@ -67,7 +67,7 @@ router.post("/create", verifyToken, async (req, res, next) => {
         images,
         price,
         date: dateObj,
-        host,
+        hosts,
         owner,
         description,
     };
