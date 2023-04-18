@@ -13,7 +13,7 @@ const eventSchema = new Schema(
         },
         description: {
             type: String,
-            required: [true, "Name is required."],
+            required: [true, "Description is required."],
             trim: true,
         },
         address: {

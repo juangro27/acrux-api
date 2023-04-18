@@ -37,8 +37,17 @@ router.get("/", async (req, res, next) => {
 });
 
 router.post("/create", verifyToken, async (req, res, next) => {
-    const { name, address, city, country, images, price, date, host } =
-        req.body;
+    const {
+        name,
+        address,
+        city,
+        description,
+        country,
+        images,
+        price,
+        date,
+        host,
+    } = req.body;
     const { _id: owner } = req.payload;
 
     const dateParts = date.split("/");
@@ -60,6 +69,7 @@ router.post("/create", verifyToken, async (req, res, next) => {
         date: dateObj,
         host,
         owner,
+        description,
     };
     try {
         const event = await Event.create(data);
