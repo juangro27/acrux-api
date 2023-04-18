@@ -4,14 +4,36 @@ const User = require("../models/User.model");
 const router = require("express").Router();
 
 router.get("/", async (req, res, next) => {
+    const { country, city, date, address } = req.query;
     let { limit: pageSize, skip } = req.query;
     pageSize = pageSize ? parseInt(pageSize) : 10;
     skip = skip ? parseInt(skip) : 0;
 
+    const dateRegex = /^\d{2}\/\d{2}\/\d{4}$/;
+
+    let queries = {};
+
+    if (country) queries.country = new RegExp(country, "i");
+    if (city) queries.city = new RegExp(city, "i");
+    if (address) queries.address = new RegExp(address, "i");
+    if (date && date.match(dateRegex)) {
+        const parsedDate = new Date(Date.parse(date));
+        if (isNaN(parsedDate.getTime())) {
+            res.status(400).json({
+                errorMessage: "Invalid date format, please use mm/dd/yyyy",
+            });
+            return;
+        }
+        queries.date = {
+            $gte: parsedDate,
+            $lt: new Date(parsedDate.getTime() + 24 * 60 * 60 * 1000),
+        };
+    }
+
     try {
         const promises = [
             Event.count(),
-            Event.find().limit(pageSize).skip(skip),
+            Event.find(queries).limit(pageSize).skip(skip),
         ];
         const [count, events] = await Promise.all(promises);
 
