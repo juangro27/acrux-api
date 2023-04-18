@@ -4,9 +4,32 @@ const { verifyToken } = require("../middlewares/verifyToken");
 const { default: mongoose } = require("mongoose");
 
 router.get("/", verifyToken, async (req, res, next) => {
+    let { limit: pageSize, skip } = req.query;
+    pageSize = pageSize ? parseInt(pageSize) : 10;
+    skip = skip ? parseInt(skip) : 0;
+
     try {
-        const users = await User.find().select({ name: 1 }).sort({ name: 1 });
-        res.json(users);
+        const promises = [
+            User.count(),
+            User.find().select({ name: 1 }).limit(pageSize).skip(skip),
+        ];
+        const [count, users] = await Promise.all(promises);
+
+        const totalPages = Math.ceil(count / pageSize) - 1;
+        const pageNumber = Math.floor(skip / pageSize);
+        const isFirst = skip === 0;
+        const isLast = pageNumber === totalPages;
+
+        res.json({
+            totalElements: count,
+            pageSize,
+            skip,
+            users,
+            totalPages,
+            pageNumber,
+            isFirst,
+            isLast,
+        });
         return;
     } catch (err) {
         next(err);

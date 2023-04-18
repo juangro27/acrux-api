@@ -11,6 +11,11 @@ const eventSchema = new Schema(
             ref: "user",
             type: Schema.Types.ObjectId,
         },
+        description: {
+            type: String,
+            required: [true, "Name is required."],
+            trim: true,
+        },
         address: {
             type: String,
             required: [true, "Address is required."],
@@ -43,7 +48,7 @@ const eventSchema = new Schema(
             required: [true, "Date is required."],
             trim: true,
         },
-        host: [
+        hosts: [
             {
                 type: String,
                 trim: true,
