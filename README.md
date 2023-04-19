@@ -14,6 +14,9 @@ Next, create a `.env` file in the root directory and add the following environme
 PORT=5005
 MONGODB_URI=<your database URI>
 JWT_SECRET=<your JWT secret>
+CLOUDINARY_NAME=juangro27
+CLOUDINARY_KEY=363564912945833
+CLOUDINARY_SECRET=EQIXS4pPH5DXbgny5ocJA9blsiI
 ```
 
 You can then start the server by running `npm start`. By default, the server will listen on port 5005.
