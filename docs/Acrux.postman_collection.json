@@ -318,7 +318,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Welcome to Acrux\",\n    \"owner\": \"643d1d3c1741ac2d9b4009ab\",\n    \"address\": \"Alcala 123\",\n    \"country\": \"France\",\n    \"city\": \"Paris\",\n    \"images\": [\n        \"https://www.acruxmartech.com/assets/img/mejora-ventas-evento-colas.jpg\",\n        \"https://www.acruxmartech.com/assets/img/mejora-ventas-evento-colas.jpg\"\n    ],\n    \"price\": 100,\n    \"date\": \"2023-01-09T23:00:00.000Z\",\n    \"host\": [\n        \"Jose\",\n        \"Alberto\"\n    ]\n}",
+							"raw": "{\n    \"name\": \"Welcome to Acrfgrtyux\",\n    \"address\": \"Alcala 123\",\n    \"country\": \"France\",\n    \"city\": \"Paris\",\n    \"images\": [\n        \"https://www.acruxmartech.com/assets/img/mejora-ventas-evento-colas.jpg\",\n        \"https://www.acruxmartech.com/assets/img/mejora-ventas-evento-colas.jpg\"\n    ],\n    \"description\": \"Loem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium delectus dolorem blanditiis amet dolore libero neque vitae quasi laborum iste molestiae tenetur quae dolorum nesciunt, nemo minus odio magnam facere uas quisquam fuga ipsam libero nobis, necessitatibus magni officia consectetur adipisci eaque amet harum impedit eveniet nulla architecto nihil suscipit, omnis explicabo obcaecati, ea odit corrupti voluptatum! Molestiae, accusamus accusantium! int omnis blanditiis cum dolorem odio. Sapiente necessitatibus ratione voluptate expedita, a nisi molestiae asperiores non, voluptatem ea quam iste molestias dolores fuga ab illum rerum nostrum nulla? Quibusdam, rerum. Laudantium delectus dolorem blanditiis amet dolore libero neque vitae quasi laborum iste molestiae tenetur quae dolorum nesciunt.\",\n    \"price\": 100,\n    \"date\": \"02-10-2023\",\n    \"hosts\": [\n        \"Jose\",\n        \"Alberto\"\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -344,7 +344,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{API_URL}}/events/?country=France",
+							"raw": "{{API_URL}}/events/?date=2023-03-10&city=paris",
 							"host": [
 								"{{API_URL}}"
 							],
@@ -354,8 +354,12 @@
 							],
 							"query": [
 								{
-									"key": "country",
-									"value": "France"
+									"key": "date",
+									"value": "2023-03-10"
+								},
+								{
+									"key": "city",
+									"value": "paris"
 								}
 							]
 						}
@@ -397,7 +401,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Welcome to Acrux\",\n    \"owner\": \"643d1d3c1741ac2d9b4009ab\",\n    \"address\": \"Alcala 123\",\n    \"country\": \"Madrid\",\n    \"city\": \"Spain\",\n    \"images\": [\n        \"https://www.acruxmartech.com/assets/img/mejora-ventas-evento-colas.jpg\",\n        \"https://www.acruxmartech.com/assets/img/mejora-ventas-evento-colas.jpg\"\n    ],\n    \"price\": 0,\n    \"date\": \"2023-01-09T23:00:00.000Z\",\n    \"host\": [\n        \"Jose\",\n        \"Alberto\"\n    ]\n}",
+							"raw": "{\n    \"name\": \"Welcome to Acrux\",\n    \"address\": \"Alcala 123\",\n    \"country\": \"Madrid\",\n    \"city\": \"Spain\",\n    \"images\": [\n        \"https://www.acruxmartech.com/assets/img/mejora-ventas-evento-colas.jpg\",\n        \"https://www.acruxmartech.com/assets/img/mejora-ventas-evento-colas.jpg\"\n    ],\n    \"price\": 0,\n    \"date\": \"2023-01-09T23:00:00.000Z\",\n    \"hosts\": [\n        \"Jose\",\n        \"Alberto\"\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -405,13 +409,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{API_URL}}/events/643d51018afdaaa3d185dfb0/edit",
+							"raw": "{{API_URL}}/events/643efad47c5a54ed05fcbb15/edit",
 							"host": [
 								"{{API_URL}}"
 							],
 							"path": [
 								"events",
-								"643d51018afdaaa3d185dfb0",
+								"643efad47c5a54ed05fcbb15",
 								"edit"
 							]
 						}
@@ -431,7 +435,7 @@
 								}
 							]
 						},
-						"method": "PUT",
+						"method": "DELETE",
 						"header": [],
 						"body": {
 							"mode": "urlencoded",
@@ -444,14 +448,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{API_URL}}/events/643d36dbb353643baf47ac60/edit",
+							"raw": "{{API_URL}}/events/643ffdf08f1effc75a366389/delete",
 							"host": [
 								"{{API_URL}}"
 							],
 							"path": [
 								"events",
-								"643d36dbb353643baf47ac60",
-								"edit"
+								"643ffdf08f1effc75a366389",
+								"delete"
 							]
 						}
 					},
