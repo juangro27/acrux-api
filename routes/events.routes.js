@@ -5,28 +5,31 @@ const router = require("express").Router();
 
 router.get("/", async (req, res, next) => {
     const { country, city, date, address, hosts } = req.query;
+    const dateRegex = /^\d{4}-\d{2}-\d{2}/;
     let { limit: pageSize, skip } = req.query;
-    pageSize = pageSize && skip !== "undefined" ? parseInt(pageSize) : 10;
-    skip = skip && skip !== "undefined" ? parseInt(skip) : 0;
-
-    const dateRegex = /^\d{2}\/\d{2}\/\d{4}$/;
+    pageSize = pageSize ? parseInt(pageSize) : 12;
+    skip = skip ? parseInt(skip) : 0;
 
     let queries = {};
 
-    if (country && country !== "undefined")
-        queries.country = new RegExp(country, "i");
-    if (city && city !== "undefined") queries.city = new RegExp(city, "i");
-    if (hosts && hosts !== "undefined") queries.hosts = new RegExp(hosts, "i");
-    if (address && address !== "undefined")
-        queries.address = new RegExp(address, "i");
-    if (date && date.match(dateRegex) && date !== "undefined") {
-        const parsedDate = new Date(Date.parse(date));
+    if (country) queries.country = new RegExp(country, "i");
+
+    if (city) queries.city = new RegExp(city, "i");
+
+    if (hosts) queries.hosts = new RegExp(hosts, "i");
+
+    if (address) queries.address = new RegExp(address, "i");
+
+    if (date && date.match(dateRegex)) {
+        const [year, month, day] = date.split("-");
+        const parsedDate = new Date(`${year}/${month}/${day}`);
         if (isNaN(parsedDate.getTime())) {
             res.status(400).json({
-                errorMessage: "Invalid date format, please use mm/dd/yyyy",
+                errorMessages: "Invalid date format, please use yyyy-mm-dd",
             });
             return;
         }
+
         queries.date = {
             $gte: parsedDate,
             $lt: new Date(parsedDate.getTime() + 24 * 60 * 60 * 1000),
@@ -34,14 +37,11 @@ router.get("/", async (req, res, next) => {
     }
 
     try {
-        console.log("queries", queries);
-        console.log("req.queries", req.query);
         const promises = [
             Event.find(queries).count(),
             Event.find(queries).limit(pageSize).skip(skip),
         ];
         const [count, events] = await Promise.all(promises);
-
         const totalPages = Math.ceil(count / pageSize) - 1;
         const pageNumber = Math.floor(skip / pageSize);
         const isFirst = skip === 0;
@@ -77,15 +77,15 @@ router.post("/create", verifyToken, async (req, res, next) => {
     } = req.body;
     const { _id: owner } = req.payload;
 
-    const dateParts = date.split("/");
-    const dateObj = new Date(`${dateParts[2]}-${dateParts[0]}-${dateParts[1]}`);
-
-    if (isNaN(dateObj.getTime())) {
+    const [year, month, day] = date.split("-");
+    const parsedDate = new Date(`${year}/${month}/${day}`);
+    if (isNaN(parsedDate.getTime())) {
         res.status(400).json({
-            errorMessage: "Invalid date format, please use mm/dd/yyyy",
+            errorMessages: "Invalid date format, please use yyyy-mm-dd",
         });
         return;
     }
+
     const data = {
         name,
         address,
@@ -93,7 +93,7 @@ router.post("/create", verifyToken, async (req, res, next) => {
         country,
         images,
         price,
-        date: dateObj,
+        date: parsedDate,
         hosts,
         owner,
         description,

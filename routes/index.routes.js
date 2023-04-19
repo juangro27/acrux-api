@@ -9,4 +9,7 @@ router.use("/users", usersRoutes);
 const eventsRoutes = require("./events.routes");
 router.use("/events", eventsRoutes);
 
+const uploadRoutes = require("./upload.routes");
+router.use("/upload", uploadRoutes);
+
 module.exports = router;
